@@ -11,7 +11,7 @@ st.set_page_config(
 # --- IMAGE HANDLING ---
 # IMPORTANT: Replace this placeholder URL with the actual URL where your image is hosted online
 # OR place 'Yaseen.png' in the same folder as your script and use image_path = "Yaseen.png"
-image_path = "D:\Scripts\Yaseen.png" # Replace with your actual image URL or local path if run locally
+image_path = "Yaseen.png" # Replace with your actual image URL or local path if run locally
 # Example using a local path (if Yaseen.png is in the same folder):
 # image_path = "Yaseen.png"
 # Example using a local path (if Yaseen.png is in an 'images' subfolder):
