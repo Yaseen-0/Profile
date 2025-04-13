@@ -4,18 +4,12 @@ from streamlit_option_menu import option_menu # Install: pip install streamlit-o
 # --- PAGE CONFIG ---
 st.set_page_config(
     page_title="Yaseen Elsedawy | Cybersecurity Portfolio",
-    page_icon="🛡️", # Add a relevant emoji/icon
+    page_icon="🛡️",
     layout="wide"
 )
 
 # --- IMAGE HANDLING ---
-# IMPORTANT: Replace this placeholder URL with the actual URL where your image is hosted online
-# OR place 'Yaseen.png' in the same folder as your script and use image_path = "Yaseen.png"
-image_path = "Yaseen.png" # Replace with your actual image URL or local path if run locally
-# Example using a local path (if Yaseen.png is in the same folder):
-# image_path = "Yaseen.png"
-# Example using a local path (if Yaseen.png is in an 'images' subfolder):
-# image_path = "images/Yaseen.png"
+image_path = "Yaseen.png"
 
 # --- HEADER ---
 with st.container():
@@ -24,7 +18,7 @@ with st.container():
         st.title("👋 Hello, I'm Yaseen Elsedawy")
         st.subheader("💼 Cybersecurity Engineer | 🚀 Tech Enthusiast | 📍 Nasr City, Cairo, Egypt")
         st.write("""
-        I’m a **dedicated and versatile Cybersecurity Engineer** with **1 year and a half** of hands-on experience in implementing, configuring, and managing a variety of security solutions in enterprise environments.
+        I'm a **dedicated and versatile Cybersecurity Engineer** with **about 2 years** of hands-on experience in implementing, configuring, and managing a variety of security solutions in enterprise environments.
 
         Currently working at **Intercom Enterprises** as a **Technical Security Engineer**, where I design secure architectures, provide technical support and training, and maintain robust cybersecurity infrastructure.
 
@@ -32,21 +26,21 @@ with st.container():
         """)
 
     with col2:
-        st.image(image_path, width=200, caption="Yaseen Elsedawy") # Added caption
+        st.image(image_path, width=200, caption="Yaseen Elsedawy")
 
-st.write("---") # Divider
+st.write("---")
 
 # --- NAVIGATION TABS ---
 selected_tab = option_menu(
-    menu_title=None, # Hides the default menu title
-    options=["About", "Experience & Skills", "Projects", "Contact"],
-    icons=["person-badge", "briefcase", "code-slash", "envelope-at"], # Bootstrap Icons
+    menu_title=None,
+    options=["About", "Experience & Skills", "Client Engagements", "Contact"],
+    icons=["person-badge", "briefcase", "building", "envelope-at"],
     orientation="horizontal",
     styles={
         "container": {"padding": "0!important", "background-color": "#fafafa"},
         "icon": {"color": "orange", "font-size": "18px"},
         "nav-link": {"font-size": "18px", "text-align": "center", "margin":"0px", "--hover-color": "#eee"},
-        "nav-link-selected": {"background-color": "#02ab21"}, # Green accent for selected tab
+        "nav-link-selected": {"background-color": "#02ab21"},
     }
 )
 
@@ -74,7 +68,7 @@ if selected_tab == "Experience & Skills":
         *   Maintained and troubleshooted IT security infrastructure across diverse client environments.
         *   Designed security architectures tailored to customer requirements.
         *   Provided Level 2/3 technical support for implemented solutions.
-        """) # Using markdown bullet points
+        """)
 
     with st.expander("🧭 **SOC L1 — Security Meter** (Sep 2023 – Dec 2023)"):
         st.markdown("""
@@ -82,9 +76,9 @@ if selected_tab == "Experience & Skills":
         *   Analyzed netflow data, system logs, alerts, and firewall events to detect potential threats.
         *   Escalated unresolved security incidents to L2/L3 analysts according to defined procedures.
         *   Generated daily, weekly, and monthly security reports summarizing key events and trends.
-        """) # Using markdown bullet points
+        """)
 
-    st.divider() # Visual separator
+    st.divider()
 
     st.subheader("🛠️ Technical Skills")
 
@@ -107,103 +101,51 @@ if selected_tab == "Experience & Skills":
         st.markdown("""
         *   **Languages:** Python, Bash, PowerShell
         *   **Use Cases:** Excel Automation (Data Comparison, Deduplication, Extraction), Configuration Migration (Testing Phase), Task Automation (Patching Integration), Scan Orchestration
-        """) # Added Scan Orchestration to Use Cases
+        """)
         st.markdown("#### Infrastructure & OS")
         st.markdown("""
         *   **Virtualization:** VMware vSphere/ESXi
         *   **Operating Systems:** Windows Server, Linux (Ubuntu, CentOS)
         """)
    
-    # --- EDUCATION SECTION ---
-    st.divider() # Add divider before Education
+    st.divider()
     st.subheader("🎓 Education")
     st.markdown("""
     *   **Master's Degree** — Tanta University (Ongoing)
-        *   _Tanta, Egypt_
-    *   **Bachelor’s Degree in Communications & Electronics Engineering** — Thebes Academy
-        *   _Cairo, Egypt_
+    *   **Bachelor's Degree in Communications & Electronics Engineering** — Thebes Academy
     *   **Cybersecurity Diploma** — National Telecommunications Institute (NTI)
-        *   _Cairo, Egypt_
     """)
 
-# --- PROJECTS TAB ---
-if selected_tab == "Projects":
-    st.subheader("🚀 Major Deployment & Consultation Projects")
-    st.write("Hands-on experience implementing and configuring security solutions for diverse clients.")
-
-    with st.expander("🏦 **CIB Bank** - Tenable Support"):
+# --- CLIENT ENGAGEMENTS TAB ---
+if selected_tab == "Client Engagements":
+    st.subheader("🏢 Select Client Engagements")
+    st.write("I've had the privilege to work with these notable organizations on security implementations:")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
         st.markdown("""
-        *   **Focus:** Post-deployment support and optimization.
-        *   **Key Activities:** Provided expert technical support and troubleshooting for the bank's Tenable SC+ deployment.
+        - 🏦 CIB Bank
+        - 🏦 Attijariwafa Bank Egypt
+        - 🏦 Egyptian Arab Land Bank
+        - 🏦 QNB Bank
+        - 🗳️ National Election Authority (NEA)
         """)
-
-    with st.expander("🏦 **Attijariwafa Bank Egypt** - Tenable Support"):
+    
+    with col2:
         st.markdown("""
-        *   **Technologies:** Tenable Security Center
-        *   **Key Activities:** Delivered post-deployment support and technical assistance for Tenable SC, ensuring smooth vulnerability management operations.
+        - 🛢️ Oil & Gas Sector Projects (9 companies)
+        - 🏢 Misr Insurance Holding Company
+        - 🏭 United Gas Derivatives Company
+        - 🚇 Cairo Metro
+        - 🏛️ Presidency
+        - 📧 VALU
         """)
-
-    with st.expander("🏦 **Egyptian Arab Land Bank** - Endpoint Security Support"):
-        st.markdown("""
-        *   **Technologies:** Kaspersky Security Center
-        *   **Key Activities:** Provided ongoing support and optimization for Kaspersky endpoint protection platform.
-        """)
-
-    with st.expander("🏦 **QNB Bank** - Patch Management Enhancement"):
-        st.markdown("""
-        *   **Technologies:** Ivanti Patch Management
-        *   **Key Activities:** Enhanced and supported patching cycles, helping improve overall security posture through effective Ivanti deployment.
-        """)
-
-    with st.expander("🗳️ **National Election Authority (NEA)** - Vulnerability Management Setup"):
-        st.markdown("""
-        *   **Technologies:** Tenable Security Center Plus (SC+), Tenable Nessus Scanners, Tenable Nessus Manager
-        *   **Key Activities:** Installed and configured the complete Tenable VM suite for infrastructure scanning and management.
-        """)
-
-    with st.expander("🛢️ **Oil & Gas Sector Projects (Multiple Companies)** - Patching & Network"):
-        st.markdown("""
-        *   **Technologies:** Ivanti Patch Management, Ivanti Xtraction, Tenable Nessus Pro, F5 LTM
-        *   **Scope:** Delivered solutions across **8 different companies** in the sector.
-        *   **Key Activities:** Configured patch management and reporting tools, deployed Nessus Pro for vulnerability scanning, implemented F5 Load Balancers for **2 organizations**.
-        """)
-
-    with st.expander("🏢 **Misr Insurance Holding Company** - Endpoint & Network Consultation"):
-        st.markdown("""
-        *   **Technologies:** Kaspersky Endpoint Security, Kaspersky Hybrid Cloud, F5 LTM
-        *   **Key Activities:** Provided expert consultation and configuration services for endpoint security (including hybrid cloud) and network load balancing.
-        """)
-
-    with st.expander("🏭 **United Gas Derivatives Company** - Advanced Threat Detection"):
-        st.markdown("""
-        *   **Technologies:** Trend Micro Deep Discovery Analyzer (DDAN) Sandbox
-        *   **Key Activities:** Deployed and configured the DDAN sandbox solution for in-depth analysis of potentially malicious files and URLs.
-        """)
-
-    with st.expander("🔐 **Cairo Metro** - Endpoint Security Implementation"):
-        st.markdown("""
-        *   **Technologies:** Trend Micro Apex One, Apex Central, Deep Security Manager
-        *   **Key Activities:** Full installation & configuration, database migration, license activation, agent troubleshooting, policy deployment, health checks.
-        """)
-
-    with st.expander("🛡️ **Presidency HA Project** - F5 High Availability Implementation"):
-        st.markdown("""
-        *   **Focus:** Ensuring business continuity for critical security infrastructure using F5 solutions.
-        *   **Key Activities:** Designed and implemented F5 High Availability (HA) configurations, performed rigorous failover testing, created comprehensive documentation.
-        """)
-
-
-    with st.expander("📧 **VALU** -Email Security.cloud"):
-        st.markdown("""
-        *   **Technologies:** Symantec Email Security.cloud, Office 365
-        *   **Key Activities:** Integrated cloud email security with O365, configured mail flow rules, implemented Data Loss Prevention (DLP) policies, enhanced anti-spam effectiveness.
-        """)
-
-
+    
     st.divider()
-    st.subheader("⚙️ Automation Projects")
-    st.write("Utilizing scripting to improve efficiency and integrate security tools.")
-
+    st.subheader("⚙️ Technical Projects & Automation")
+    st.write("Key technical implementations and automation solutions developed for clients:")
+    
     with st.expander("📊 **Excel Automation Tool** - Data Processing"):
         st.markdown("""
         *   **Technology:** Python
@@ -225,15 +167,13 @@ if selected_tab == "Projects":
         *   **Benefit:** Aimed to automate the patching lifecycle for identified vulnerabilities, reducing remediation time and improving security compliance posture.
         """)
 
-    # --- NEWLY ADDED PROJECT ---
-    with st.expander("⏲️ **Tenable Scan Initiation & Monitoring**"): # Added icon
+    with st.expander("⏲️ **Tenable Scan Initiation & Monitoring**"):
         st.markdown("""
         *   **Technology:** Scripting (e.g., Python using Tenable API)
         *   **Functionality:** Developed a script to programmatically trigger vulnerability scans in Tenable (Nessus/SC+) and monitor their completion status.
         *   **Benefit:** Enables scheduled or on-demand scanning outside the Tenable UI and integrates scan status into automated workflows.
         """)
-    # --- END OF NEW PROJECT ---
-
+        
 # --- CONTACT TAB ---
 if selected_tab == "Contact":
     st.subheader("📬 Get In Touch")
